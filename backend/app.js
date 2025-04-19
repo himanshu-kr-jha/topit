@@ -97,7 +97,8 @@ const parseTopics = (text) => {
     // const result = completion.choices[0].message.content;
     const response = await ai.models.generateContent({
       model: "gemini-2.0-flash",
-      contents: `Extract the important topics from this syllabus:\n${text}`,
+      contents: `You are an expert academic assistant with a deep understanding of how exams are structured. Given the syllabus below, extract the most important topics that are likely to be asked in exams. Focus on identifying core concepts, high-weightage areas, and topics that typically form the basis for both theoretical and practical questions. Provide your response as a concise, categorized list of exam-relevant topics.
+Syllabus:\n${text}`,
     });
     // console.log("Gemini Response Text:", response.text);
     res.json({ topics: response.text });
